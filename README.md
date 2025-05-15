@@ -2,31 +2,8 @@
 
 Create a Full-Stack Task Management Application.
 
-### Note: Try to do it by yourself.
+## Taskify is a web application that allows users to create, edit, and delete tasks. It also allows users to mark tasks as completed and view a list of completed tasks.
 
-### Setup Guide
-
-#### Backend Setup
-1. go inside week-5/backend and run:
-
-```
- npm install 
-```
-
-2. copy .env.example to .env.
-```
-cp .env.example .env
-```
-
-3. run the server.
-```
-npm run dev
-```
-start building.
-
-#### Frontend Setup
-
-- go inside week-5/frontend and run:
 
 ### Reference UI:
 
@@ -34,4 +11,3 @@ start building.
 ![Image](https://utfs.io/f/A8JZzw0Laf9j7O4YAiCkbTYcosHutBJ0wAWjzMN61dIF3C7R)
 
 
-start building.
