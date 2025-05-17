@@ -2,6 +2,8 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const { MONGO_URI, PORT } = require("./config");
+const userRouter = require("./routes/user");
+const todoRouter = require('./routes/todo');
 
 
 const app = express();
@@ -12,6 +14,9 @@ app.use(cors());
 app.get("/", (req, res) => {
     res.send("Hii  there..........")
 });
+
+app.use("/api/v1/user", userRouter);
+app.use("/api/v1/todo", todoRouter);
 
 async function main(){
     try{
