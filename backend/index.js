@@ -1,26 +1,30 @@
 require('dotenv').config();
 const express = require("express");
-const cors = require('cors');
+const mongoose = require("mongoose");
+const cors = require("cors");
+const { MONGO_URI, PORT } = require("./config");
 
 
 const app = express();
 
-app.use(cors());
 app.use(express.json());
+app.use(cors());
 
-const { userRouter } = require('./routes/todo');
-const { todoRouter } = require('./routes/user');
-
-
-app.get("/healthy", (req, res) => {
-    res.status(200).send("hello bitch")
+app.get("/", (req, res) => {
+    res.send("Hii  there..........")
 });
 
-
 async function main(){
-    await mongoose.connect('process.env.MongoDB_URI');
-    app.listen(PORT, () => {
-        console.log(`server is running on ${PORT}`);
-    })
+    try{
+        await mongoose.connect(MONGO_URI);
+        console.log("Database is connected");
+    }catch(error){
+        console.error("Database connection Failed : ", error);
+        process.exit(1);
+    }
 }
 main();
+
+app.listen(PORT, () => {
+    console.log(`server is running on ${PORT}`)
+});
