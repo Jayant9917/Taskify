@@ -1,7 +1,7 @@
 const jwt = require("jsonwebtoken");
 const { JWT_SECRET } = require("../config");
 
-const userMiddleware = async (req, res, next) => {
+const usermiddleware = async (req, res, next) => {
     try{
         const token = req.header.token;
         if(!token){
@@ -20,5 +20,5 @@ const userMiddleware = async (req, res, next) => {
 };
 
 module.exports = {
-    userMiddleware
+    usermiddleware
 }
